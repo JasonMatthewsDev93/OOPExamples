@@ -14,7 +14,7 @@ function Parent(first, last, age, eye) {
   //Is the same as
   
   class Siblings{
-    //needed?
+    //Needed?
       constructor(first, last, age, eye) {
           this.first = first;
           this.last = last;

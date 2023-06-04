@@ -1,9 +1,18 @@
 class Animal {
+    #age
     constructor(age, gender, phylum) {
-        this.age = age;
+        this.#age = age;
         this.gender = gender;
         this.phylum = phylum;
     }
+
+    // get age() {
+    //     return this.#age;
+    // }
+    
+    // set age(age) {
+    // this.#age = age;
+    // }
 
     isMammal(yesNo) {
         if(yesNo) {
@@ -18,15 +27,21 @@ class Animal {
 }
 
 class Lion extends Animal {
-    constructor(call, colour) {
-        super(call);
+    constructor(call, colour, age) {
+        super();
+        this.call = call;
         this.colour = colour;
     }
 
     makeSound() {
         console.log("Roar!");
+    }
+
+    getLionAge() {
+        // this.age = 98;
+        return this.age;
       }
-    
+ 
     lionInfo(){
         return this.isMammal(true);
     }
@@ -34,16 +49,18 @@ class Lion extends Animal {
 
 class Bear extends Animal {
     constructor(call, colour) {
-        super(call);
+        super();
+        this.call = call;
         this.colour = colour;
     }
 
     makeSound() {
         console.log("Growl!");
-      }
+    }
 
+    //Polymorphism
     isMammal(){
-        return "A bear is a mammal"
+        return "A bear is a mammal";
     }
     
     bearInfo(){
@@ -51,8 +68,12 @@ class Bear extends Animal {
     }
 }
 
-const lion = new Lion("Roar", "brown");
+const lion = new Lion("Roar", "brown", 7);
 const bear = new Bear("Roar", "brown");
 
-console.log(lion.lionInfo())
-console.log(bear.bearInfo())
+console.log(lion.lionInfo());
+console.log(lion.makeSound());
+console.log(lion.getLionAge())
+lion.age = 183
+console.log(lion.getLionAge())
+console.log(bear.bearInfo());
