@@ -6,12 +6,13 @@ class Animal {
         this.phylum = phylum;
     }
 
+    //Encapsulation
     // get age() {
     //     return this.#age;
     // }
     
     // set age(age) {
-    // this.#age = age;
+    //     this.#age = age;
     // }
 
     isMammal(yesNo) {
@@ -21,6 +22,7 @@ class Animal {
 
         return "Is not a mammal";
     }
+    
     makeSound() {
         throw new Error("Must implement this method")
     }
@@ -28,7 +30,7 @@ class Animal {
 
 class Lion extends Animal {
     constructor(call, colour, age) {
-        super();
+        super(age);
         this.call = call;
         this.colour = colour;
     }
@@ -48,8 +50,8 @@ class Lion extends Animal {
 }
 
 class Bear extends Animal {
-    constructor(call, colour) {
-        super();
+    constructor(call, colour, age) {
+        super(age);
         this.call = call;
         this.colour = colour;
     }
@@ -63,13 +65,17 @@ class Bear extends Animal {
         return "A bear is a mammal";
     }
     
+    getBearAge() {
+        return this.age
+    }
+
     bearInfo(){
         return this.isMammal(true);
     }
 }
 
 const lion = new Lion("Roar", "brown", 7);
-const bear = new Bear("Roar", "brown");
+const bear = new Bear("Roar", "brown", 25);
 
 console.log(lion.lionInfo());
 console.log(lion.makeSound());
@@ -77,3 +83,4 @@ console.log(lion.getLionAge())
 lion.age = 183
 console.log(lion.getLionAge())
 console.log(bear.bearInfo());
+console.log(bear.getBearAge())
