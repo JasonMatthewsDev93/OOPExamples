@@ -12,14 +12,20 @@ class Animal {
 
         return "Is not a mammal";
     }
+    makeSound() {
+        throw new Error("Must implement this method")
+    }
 }
 
 class Lion extends Animal {
     constructor(call, colour) {
-        super();
-        this.call = call;
+        super(call);
         this.colour = colour;
     }
+
+    makeSound() {
+        console.log("Roar!");
+      }
     
     lionInfo(){
         return this.isMammal(true);
@@ -28,10 +34,13 @@ class Lion extends Animal {
 
 class Bear extends Animal {
     constructor(call, colour) {
-        super();
-        this.call = call;
+        super(call);
         this.colour = colour;
     }
+
+    makeSound() {
+        console.log("Growl!");
+      }
 
     isMammal(){
         return "A bear is a mammal"
