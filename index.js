@@ -8,5 +8,3 @@ const Triangle = require('./classes/Triangle');
 // const Animal = require('./presentation-classes/Animal');
 // const Lion = require('./presentation-classes/Animal');
 // const Bear = require('./presentation-classes/Animal');
-
-// console.log(Lion.lionInfo())
