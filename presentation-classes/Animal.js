@@ -22,7 +22,7 @@ class Animal {
 
         return "Is not a mammal";
     }
-    
+
     makeSound() {
         throw new Error("Must implement this method")
     }
@@ -72,6 +72,12 @@ class Bear extends Animal {
     bearInfo(){
         return this.isMammal(true);
     }
+}
+
+module.exports = {
+    Animal,
+    Lion,
+    Bear
 }
 
 const lion = new Lion("Roar", "brown", 7);
